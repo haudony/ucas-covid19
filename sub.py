@@ -57,6 +57,8 @@ def login(s: requests.Session, username, password):
     if r.json().get('m') != "操作成功":
         print(r.text)
         print("登录失败")
+        if api_key != "":
+            message(api_key, "yxt登录失败", "yxt登录失败")
         exit(1)
     else:
         print("登录成功")
@@ -71,6 +73,8 @@ def get_daily(s: requests.Session):
         return daily.json()['d']
     else:
         print("获取昨日信息失败")
+        if api_key != "":
+            message(api_key, "yxt获取昨日信息失败", "yxt获取昨日信息失败")
         exit(1)
 
 
@@ -139,9 +143,9 @@ def submit(s: requests.Session, old: dict):
 
     result = r.json()
     if result.get('m') == "操作成功":
-        print("打卡成功")
+        print("yxt打卡成功")
     else:
-        print("打卡失败，错误信息: ", r.json().get("m"))
+        print("yxt打卡失败，错误信息: ", r.json().get("m"))
 
     if api_key != "":
         message(api_key, result.get('m'), new_daily)

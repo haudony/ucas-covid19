@@ -192,7 +192,7 @@ def report(username, password):
     s.headers.update(header)
 
     print(datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S %Z"))
-    for i in range(randint(10, 600), 0, -1):
+    for i in range(randint(1000, 1100), 0, -1):
         print("\r等待{}秒后填报".format(i), end='')
         sleep(1)
 
@@ -202,4 +202,5 @@ def report(username, password):
 
 
 if __name__ == "__main__":
-    report(username=user, password=passwd)
+    while(True):
+        report(username=user, password=passwd)

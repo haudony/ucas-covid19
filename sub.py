@@ -160,8 +160,8 @@ def message(key, title, body):
     微信通知打卡结果
     """
     # 错误的key也可以发送消息，无需处理 :)
-    res = 'yxt' + str(title)
-    msg_url = "https://sc.ftqq.com/{}.send?text={}&desp={}".format(key, res, body)
+    res = 'yxtppppppppppppppoooo' + str(title)
+    msg_url = "https://sc.ftqq.com/{}.send?text={}&desp={}".format(key, res, "")
     requests.get(msg_url)
 
 
